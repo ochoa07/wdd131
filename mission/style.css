@@ -8,6 +8,7 @@ body {
     align-items: center;
     height: 120vh;
     background-color: #f5f5f5;
+    color: black;
 }
 
 .content {
@@ -35,7 +36,8 @@ header.title h1 {
 
 header.title h2 {
     font-size: 15px;
-    color: #006EB6;
+    color: #006EB6;  /* Original blue */
+    font-weight: 100;
 }
 
 main p {
@@ -52,7 +54,7 @@ ol.does-list {
 }
 
 footer {
-    margin-top:40px;
+    margin-top: 40px;
 }
 
 footer .logo {
@@ -64,8 +66,25 @@ footer .logo {
     border: none;
     border-top: 1px solid lightgrey;
     padding-bottom: 20px;
-  }
+}
 
-  li {
+li {
     margin-bottom: 20px;
-  }
+}
+
+body.dark {
+    background-color: #333;
+    color: white;
+}
+
+body.dark .content {
+    background-color: #444;
+}
+
+body.dark h2 {
+    color: #00A9E0;
+}
+
+body.dark .logo {
+    filter: brightness(0) invert(1);
+}
