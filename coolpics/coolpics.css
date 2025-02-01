@@ -45,7 +45,7 @@ main {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 0.5rem;
     justify-content: center;
     padding: 2rem;
@@ -73,9 +73,52 @@ footer {
     font-family: var(--primary-font);
 }
 
+nav li {
+    list-style: none;
+}
+
+.hide {
+	display: none;
+}
+
+.viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+    z-index: 10;
+    padding: 20px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.viewer img {
+    width: 100%;    /* Make the image take up the full width of the container */
+    height: 100%;   /* Make the image take up the full height of the container */
+    object-fit: cover;  /* Ensure the image covers the square area while maintaining aspect ratio */
+    max-width: 500px;  /* Optionally set max width */
+    max-height: 500px; /* Optionally set max height */
+    border: none;
+
+}
+
+.close-viewer {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem; /* Reduced size */
+    cursor: pointer;
+}
+
 
 /* Media Query for Small Screens (Mobile) */
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 700px) {
     body {
         font-size: 1.1em;
     }
@@ -89,24 +132,53 @@ footer {
     }
 
     .gallery {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     img {
-        height: 120px;
-        width: 120px;
-        max-width: 100%;
+        /* height: 120px; */
+        width: 100%;
+        /* max-width: 100%; */
     }
+
+    nav {
+        display: none;
+    }
+
 }
 
 /* Media Query for Screens with min-width of 1000px */
 @media screen and (min-width: 1000px) {
     .gallery {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         padding: 3rem;
     }
   
     .menu-button {
         display: none;
     }
+
+    nav {
+        display: initial;
+    }
+
+    nav li {
+        display: inline-block;
+        padding: 20px;
+    }
+
+    .close-viewer{
+        top: 43px;
+        right: 400px;
+    }
+
+    .viewer img {
+        padding: 50px;
+        background: rgba(0, 0, 0, 0.75);
+    }
+
+    .viewer{
+        background: none;
+    }
+
 }
