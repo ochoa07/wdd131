@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+    --gold-color: #EFC69B;
+    --red-color: #AF1B3F;
+    --dark-color: #473144;
+    --body-font: Helvetica, Arial, sans-serif;
+    --headline-font: Lora, Impact, serif;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--dark-color);
+}
+
+/* Header */
+h1, h2 {
+    font-family: var(--headline-font);
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h2 {
+    color: var(--red-color);
+}
+
+footer {
+    text-align: center;
+}
+
+.highlight {
+    color: var(--red-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Main Navigation */
+.main-nav {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    gap: 15px;           
+    padding: 15px 0;          
+    margin: 0 auto;         
+    max-width: 100%;         
+    border-top: 1px solid var(--red-color); 
+    border-bottom: 1px solid var(--red-color);
+}
+
+/* Navigation Link */
+.main-nav li a {
+    color: var(--red-color);
+    font-size: 1.1rem;  
+    text-align: right;  
+}
+
+.main-nav li:last-child {
+    margin-right: 50px;
+}
+
+/* Article Container Grid */
+.article-container, .main-container {
+    display: grid;
+    gap: 20px;
+}
+
+.article-container {
+    grid-template-columns: 1fr 2fr;
+}
+
+.main-container {
+    grid-template-columns: 2fr 1fr; 
+}
+
+/* Filter Section */
+.filter-section {
+    grid-column: 2;
+}
+
+/* Hide Skip Link */
+.skiptocontent a {
+    position: absolute;
+    top: -40px;             
+    left: 0;               
+    color: var(--red-color);       
+    background-color: white;    
+    padding: 10px;   
+    border-radius: 5px;     
+    font-weight: bold;   
+    z-index: 10;    
+}
+
+.skiptocontent a:focus {
+    top: 0;             
+    background-color: var(--gold-color); 
+    color: var(--dark-color);
+}
