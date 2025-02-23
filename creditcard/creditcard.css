@@ -13,6 +13,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     padding: 20px;
+    position: relative; 
 }
 
 .container {
@@ -22,6 +23,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    position: relative; 
 }
 
 .card, .card-front, .card-back {
@@ -42,10 +44,8 @@ body {
     transition: transform 0.5s ease;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow effect */
-    position: absolute;
-    left: 437px;
-    z-index: 2; /* Higher z-index to place the card on top of the form */
-    top: 50px;
+    position: relative; /* Ensure the card stays fixed relative to the viewport */
+    z-index: 2; /* Ensure it's above other content */
 }
 
 .card:hover {
