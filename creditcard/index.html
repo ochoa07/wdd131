@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Credit Card Info. Working with forms.">
+    <meta name="author" content="Chelsea Ochoa Mata">
+    <title>Credit Card</title>
+    <link rel="stylesheet" type="text/css" href="creditcard.css" />
+    <script src="creditcard.js" defer></script>
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+</head>
+<body>
+
+    <div class="container">
+        <!-- Credit Card Preview -->
+        <div class="card" id="creditCard">
+          <div class="card-front">
+            <div class="card-logo" id="cardLogo">
+              <img src="chipimg.jpg" alt="Chip" class="chip" />
+            </div>
+            <div class="visa-logo">
+              <img src="visalogo.png" alt="Visa" class="visa" />
+            </div>
+            <div class="card-number" id="cardNumber">1234  **##  ####  ####</div>
+            <div class="card-info">
+              <div class="card-holder">
+                <label>Card Holder</label>
+                <span id="cardHolder">FULL NAME</span>
+              </div>
+              <div class="expiry-date">
+                <label>Expires</label>
+                <span id="expiryDate">MM/YY</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="stripe"></div>
+            <div class="cvv">
+              <label>CVV</label>
+              <span id="cvv">123</span>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Form Fields -->
+        <form id="cardForm">
+          <div class="form-group">
+            <label for="inputCardNumber">Card Number</label>
+            <input type="text" id="inputCardNumber" placeholder="1234 5678 9876 5432" maxlength="19" required />
+          </div>
+          <div class="form-group">
+            <label for="inputCardHolder">Card Holder</label>
+            <input type="text" id="inputCardHolder" placeholder="John Doe" required />
+          </div>
+      
+          <!-- Expiration Date and CVV -->
+          <div class="form-group expiration-cvv">
+            <div class="expiration">
+              <label for="selectExpiryMonth">Expiration Date</label>
+              <div class="selects">
+                <select id="selectExpiryMonth" required>
+                  <option value="">Month</option>
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+                <select id="selectExpiryYear" required>
+                  <option value="">Year</option>
+                  <option value="23">2023</option>
+                  <option value="24">2024</option>
+                  <option value="25">2025</option>
+                  <option value="26">2026</option>
+                  <option value="27">2027</option>
+                  <option value="28">2028</option>
+                  <option value="29">2029</option>
+                  <option value="30">2030</option>
+                </select>
+              </div>
+            </div>
+      
+            <div class="cvv-field">
+              <label for="inputCVV">CVV</label>
+              <input type="text" id="inputCVV" placeholder="123" maxlength="3" required />
+            </div>
+          </div>
+          
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+</body>
+</html>
