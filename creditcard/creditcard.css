@@ -44,8 +44,10 @@ body {
     transition: transform 0.5s ease;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow effect */
-    position: relative; /* Ensure the card stays fixed relative to the viewport */
-    z-index: 2; /* Ensure it's above other content */
+    position: absolute;
+    left: 437px;
+    z-index: 2; /* Higher z-index to place the card on top of the form */
+    top: 50px;
 }
 
 .card:hover {
