@@ -42,11 +42,15 @@ function participantTemplate(count) {
   
   // Function to calculate total fees
   function totalFees() {
+    // Select all fee input elements
     let feeElements = document.querySelectorAll("[id^=fee]");
-    feeElements = [...feeElements]; // Convert NodeList to array
   
+    // Convert NodeList to an array using the spread operator
+    feeElements = [...feeElements];
+  
+    // Sum up the fees using reduce
     const total = feeElements.reduce((sum, feeElement) => {
-      const feeValue = parseFloat(feeElement.value) || 0; // Treat empty as 0
+      const feeValue = parseFloat(feeElement.value) || 0;  // Convert to number, treat empty values as 0
       return sum + feeValue;
     }, 0);
   
@@ -57,20 +61,19 @@ function participantTemplate(count) {
   function successTemplate(info) {
     return `
       <p>Thank you ${info.adultName} for registering.</p>
-      <p>You have registered ${info.participantCount} participants and owe $${info.totalFees.toFixed(2)} in Fees.</p>
+      <p>You have registered ${info.participantCount + 1} participants and owe $${info.totalFees.toFixed(2)} in Fees.</p>
     `;
   }
   
   // Function to handle form submission
   function submitForm(event) {
-    event.preventDefault(); // Prevent the default form submission (page reload)
+    event.preventDefault();  // Prevent the default form submission (page reload)
   
-    // Get the adult's name
+    // Get adult's name (assuming the input field with id 'adult_name')
     const adultName = document.getElementById("adult_name").value;
   
-    // Count the number of participants dynamically
+    // Count the number of participants
     const participantCount = document.querySelectorAll('.participant').length;
-    console.log("Number of participants: ", participantCount); // Debugging: Log participant count
   
     // Calculate the total fees
     const total = totalFees();
@@ -96,22 +99,20 @@ function participantTemplate(count) {
   
   // Event listener for the Add Participant button
   document.addEventListener("DOMContentLoaded", function() {
+    let participantCount = 1; // Set initial participant count
+  
     // Add event listener to the "Add Participant" button
     document.getElementById("add").addEventListener("click", function() {
-      // Calculate how many participants are already present, and add new participant
-      const participantCount = document.querySelectorAll('.participant').length + 1; // Correct participant count
+      participantCount++; // Increase the participant count
   
       // Generate the HTML for the new participant using the participantTemplate function
       const newParticipantHTML = participantTemplate(participantCount);
   
       // Insert the new participant section before the "Add Participant" button
       document.getElementById("add").insertAdjacentHTML('beforebegin', newParticipantHTML);
-  
-      // Log to check participant count on click
-      console.log("Participant added. Current participant count: ", participantCount);
     });
   
     // Add event listener to the form for submit event
-    const form = document.getElementById("registrationForm");
+    const form = document.getElementById("registrationForm"); // Assuming the form has id="registrationForm"
     form.addEventListener("submit", submitForm);
   });
