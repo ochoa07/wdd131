@@ -206,12 +206,10 @@ footer .social-icons img {
 
 
 
-
-
-
-
 @media screen and (max-width: 768px) {
+    /* Section layout */
     section {
+        display: flex;
         flex-direction: column;
         text-align: left;
         padding: 10px;
@@ -220,6 +218,8 @@ footer .social-icons img {
     section img {
         width: 100%;
         height: auto; 
+        object-fit: cover;  /* Ensures the image covers the container */
+        max-height: 300px; /* Limits the height of images to prevent over-expansion */
     }
 
     .recipe-content {
@@ -229,36 +229,57 @@ footer .social-icons img {
     }
 
     .tags {
-        margin-bottom: 15px; 
+        margin-bottom: 10px; /* Reduces space to improve layout density */
     }
 
     h2 {
-        font-size: 30px; 
+        font-size: 24px; /* Adjust font size for smaller screens */
+        line-height: 1.4;  /* Improve readability */
+        font-weight: 600;  /* Increase contrast */
+        margin: 10px 0;  /* Space around headings */
     }
 
-   
+    .description {
+        font-size: 14px; /* Readable font size for smaller screens */
+        line-height: 1.6; /* Improve readability */
+        color: var(--text-dark);
+    }
+
     footer {
         display: flex;
-        flex-direction: column; /* Stacks items vertically */
+        flex-direction: column;
         align-items: center;
-        padding: 20px;
+        padding: 10px 20px;
+        width: 100%;  /* Ensures full-width footer on smaller screens */
+        box-sizing: border-box;
     }
-    
+
     footer .social-icons {
         display: flex;
-        justify-content: center; /* Centers the icons horizontally */
-        margin-bottom: 10px; /* Space between icons and text */
+        justify-content: center;
+        margin-bottom: 10px;
+        gap: 8px; /* Slightly increased gap between icons for visual clarity */
     }
-    
+
     footer .social-icons img {
-        width: 35px;
-        height: 35px;
-        margin: 0 5px; /* Space between icons */
+        width: 30px;  /* Slightly smaller icons to avoid excess space */
+        height: 30px;
+        transition: transform 0.3s ease;  /* Smooth scale on hover */
     }
-    
+
+    footer .social-icons img:hover {
+        transform: scale(1.1);  /* Slight scaling effect for better interaction feedback */
+    }
+
     footer a {
-        text-align: center; /* Centers the text under the icons */
+        text-align: center;
         font-size: 14px;
-        margin-top: 10px; /* Adds space between the icons and the link */
+        margin-top: 10px;
+        color: var(--primary-color);
+        text-decoration: none;  /* Removes underline for cleaner look */
+    }
+
+    footer a:hover {
+        text-decoration: underline;  /* Adds underline on hover for better accessibility */
     }
 }
