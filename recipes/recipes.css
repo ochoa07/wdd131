@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #1B98E0;
+    --secondary-color: #59c3c3;
+    --text-dark: #333;
+    --text-light: #ebebeb;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --secondary-font: "Amatic SC";
+}
+
+/* General Styling */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: var(--primary-font);
+    background-color: #f9f9f9;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+h1, h2 {
+    font-family: var(--secondary-font);
+}
+
+h2 {
+    margin: 10px 0;
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+/* Header Styling */
+header {
+    color: var(--text-dark);
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 50px;
+    margin: 0;
+}
+
+/* Search Container */
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px auto;
+    padding-right: 40px;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid var(--text-dark);
+    border-radius: 10px;
+}
+
+.search-container button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container button img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Divider */
+hr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 2px;
+    background-color: #ccc;
+    width: 100%;
+}
+
+/* Recipes Section */
+.recipes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0;
+    padding: 20px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid var(--text-dark);
+    width: 100%;
+    max-width: 1100px;
+    margin: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 10px;
+}
+
+section img {
+    width: 350px;
+    height: auto;
+    border-radius: 2px;
+}
+
+.recipe-content {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.tag {
+    color: var(--text-dark);
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 1px;
+    margin-right: 5px;
+    border: 2px solid var(--text-dark);
+}
+
+img {
+    max-width: 100%;
+}
+
+
+.description {
+    font-size: 14px;
+    color: var(--text-dark);
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+
+.rating {
+    display: inline-flex;
+    font-size: 20px;
+    color: #f39c12;
+    margin-top: 0; 
+    margin-bottom: 10px; 
+}
+
+.icon-star {
+    color: #f39c12;
+}
+
+.icon-star-empty {
+    color: #ccc;
+}
+
+footer {
+    color: var(--primary-color);
+    padding: 20px;
+    width: 100%;
+    max-width: 1100px;           
+    position: fixed;
+    bottom: 0;
+    left: 50%;                      
+    transform: translateX(-50%);     
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;          
+}
+
+footer a {
+    font-size: 14px;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+footer .social-icons {
+    display: flex;
+    gap: 10px;        
+}
+
+footer .social-icons img {
+    width: 35px;
+    height: 35px;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    section {
+        flex-direction: column;
+        text-align: left;
+        padding: 10px;
+    }
+
+    section img {
+        width: 100%;
+        height: auto; 
+    }
+
+    .recipe-content {
+        padding-left: 0;
+        text-align: left;
+        padding-top: 10px;
+    }
+
+    .tags {
+        margin-bottom: 15px; 
+    }
+
+    h2 {
+        font-size: 30px; 
+    }
+
+   
+    footer {
+        display: flex;
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center;
+        padding: 20px;
+    }
+    
+    footer .social-icons {
+        display: flex;
+        justify-content: center; /* Centers the icons horizontally */
+        margin-bottom: 10px; /* Space between icons and text */
+    }
+    
+    footer .social-icons img {
+        width: 35px;
+        height: 35px;
+        margin: 0 5px; /* Space between icons */
+    }
+    
+    footer a {
+        text-align: center; /* Centers the text under the icons */
+        font-size: 14px;
+        margin-top: 10px; /* Adds space between the icons and the link */
+    }
+}
