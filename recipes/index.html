@@ -7,8 +7,8 @@
     <meta name="description" content="Recipe Book - Part 1. W09 Prove.">
     <meta name="author" content="Chelsea Ochoa Mata">
     <link rel="stylesheet" type="text/css" href="recipes.css" />
-    <script src="recipes.mjs" defer></script>
     <script src="scrips/main.js" defer></script>
+    <script src="recipes.mjs" defer></script>
     <link rel="icon" href="images/favicon.png" type="image/x-icon" />
 
      <meta property="og:title" content="Recipe Book - Explore Delicious Recipes">
@@ -21,64 +21,39 @@
      <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
-
-<body>
-    <header>
-        <img src="images/recipe-book.png" alt="recipe book" width="350" height="200" loading="lazy">
-        <h1>RecipeBook</h1>
-    </header>    
-
-    <main>
-    <div class="search-container">
-        <input type="text" id="search" placeholder="Find a recipe">
-        <button onclick="searchRecipe()">
-            <img src="images/search.svg" alt="Search Icon">
-        </button>
-    </div>
-    <hr>
-    <div class="recipes">
-        <section>
-            <img src="images/apple-crisp.jpg" alt="Recipe Image" width="350" height="200" srcset="images/apple-crisp-2x.jpg 2x" loading="lazy">
-            <div class="recipe-content">
-                <div class="tags">
-                    <span class="tag">dessert</span>
-                </div>
-                <h2>Apple Crisp</h2>
-                <div class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star">⭐</span>
-                    <span aria-hidden="true" class="icon-star-empty">☆</span>
-                </div>
-                <div class="description">
-                    This apple crisp recipe is a simple yet delicious fall dessert that's great served warm with vanilla ice cream.
-                </div>
+    <body>
+        <header>
+            <div class="header-content">
+                <img src="images/recipe-book.png" alt="recipe book" width="350" height="200" loading="lazy">
+                <h1>RecipeBook</h1>
             </div>
-        </section>
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Find a recipe">
+                <button id="search-button">
+                    <img src="images/search.svg" alt="Search Icon">
+                </button>
+            </div>
+                <hr>
+        </header>    
+
+        <main id="recipe-container"></main>
+        <script src="main.js" type="module"></script>
+
+    </body>
+
+    <footer> 
+        <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a> 
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com">
+                <img src="images/instagram_icon.svg" alt="Instagram">
+            </a>
+            <a href="https://www.youtube.com">
+                <img src="images/youtube_icon.svg" alt="YouTube">
+            </a>
+            <a href="https://www.pinterest.com">
+                <img src="images/pinterest_icon.svg" alt="Pinterest">
+            </a>
         </div>
-        </main>
-
-</body>
-
-<footer> 
-
-    <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a> 
-
-
-    <div class="social-icons">
-        <a href="https://www.instagram.com">
-            <img src="images/instagram_icon.svg" alt="Instagram">
-        </a>
-        <a href="https://www.youtube.com">
-            <img src="images/youtube_icon.svg" alt="YouTube">
-        </a>
-        <a href="https://www.pinterest.com">
-            <img src="images/pinterest_icon.svg" alt="Pinterest">
-        </a>
-    </div>
-
-
-</footer>
-
+    </footer>
 </html>

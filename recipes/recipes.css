@@ -9,7 +9,6 @@
     --secondary-font: "Amatic SC";
 }
 
-/* General Styling */
 html, body {
     height: 100%;
     display: flex;
@@ -19,7 +18,10 @@ html, body {
     background-color: #f9f9f9;
 }
 
-/* Main Content */
+body {
+    padding-bottom: 100px;
+}
+
 main {
     flex: 1;
     padding: 20px;
@@ -35,34 +37,38 @@ h2 {
     color: var(--primary-color);
 }
 
-/* Header Styling */
 header {
     color: var(--text-dark);
-    text-align: center;
     padding: 20px;
+    text-align: center;
+}
+
+.header-content {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px; 
 }
 
 header img {
-    height: 50px;
+    height: 100px; 
     width: auto;
-    margin-right: 10px;
+    margin-right: 20px;  
 }
 
 header h1 {
     font-size: 50px;
     margin: 0;
+    font-family: var(--secondary-font);
 }
 
-/* Search Container */
 .search-container {
     position: relative;
     width: 100%;
     max-width: 1100px;
     margin: 20px auto;
     padding-right: 40px;
+    text-align: center; 
 }
 
 .search-container input[type="text"] {
@@ -88,7 +94,6 @@ header h1 {
     height: 20px;
 }
 
-/* Divider */
 hr {
     margin: 0;
     padding: 0;
@@ -98,11 +103,10 @@ hr {
     width: 100%;
 }
 
-/* Recipes Section */
 .recipes {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center; 
     margin: 0;
     padding: 20px;
     margin-bottom: 100px;
@@ -115,7 +119,7 @@ section {
     border-radius: 8px;
     border: 1px solid var(--text-dark);
     width: 100%;
-    max-width: 1100px;
+    max-width: 1100px; 
     margin: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -124,7 +128,7 @@ section {
 
 section img {
     width: 350px;
-    height: auto;
+    height: 300px;
     border-radius: 2px;
 }
 
@@ -133,6 +137,12 @@ section img {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+}
+
+#recipe-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
 .tag {
@@ -148,14 +158,12 @@ img {
     max-width: 100%;
 }
 
-
 .description {
     font-size: 14px;
     color: var(--text-dark);
     margin-top: 0;
     margin-bottom: 5px;
 }
-
 
 .rating {
     display: inline-flex;
@@ -177,14 +185,16 @@ footer {
     color: var(--primary-color);
     padding: 20px;
     width: 100%;
-    max-width: 1100px;           
-    position: fixed;
+    max-width: 1100px;
+    position: relative;
     bottom: 0;
-    left: 50%;                      
-    transform: translateX(-50%);     
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: space-between;  
-    align-items: center;   
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    z-index: 10; 
 }
 
 footer a {
@@ -195,7 +205,7 @@ footer a {
 
 footer .social-icons {
     display: flex;
-    gap: 10px;        
+    gap: 10px;      
 }
 
 footer .social-icons img {
@@ -203,11 +213,10 @@ footer .social-icons img {
     height: 35px;
 }
 
-
-
+/*----------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (max-width: 768px) {
-    /* Section layout */
+   
     section {
         display: flex;
         flex-direction: column;
@@ -218,8 +227,8 @@ footer .social-icons img {
     section img {
         width: 100%;
         height: auto; 
-        object-fit: cover;  /* Ensures the image covers the container */
-        max-height: 300px; /* Limits the height of images to prevent over-expansion */
+        object-fit: cover;
+        max-height: 300px;
     }
 
     .recipe-content {
@@ -229,46 +238,46 @@ footer .social-icons img {
     }
 
     .tags {
-        margin-bottom: 10px; /* Reduces space to improve layout density */
+        margin-bottom: 10px;
     }
 
     h2 {
-        font-size: 24px; /* Adjust font size for smaller screens */
-        line-height: 1.4;  /* Improve readability */
-        font-weight: 600;  /* Increase contrast */
-        margin: 10px 0;  /* Space around headings */
+        font-size: 24px;
+        line-height: 1.4;
+        font-weight: 600;
+        margin: 10px 0;
     }
 
     .description {
-        font-size: 14px; /* Readable font size for smaller screens */
-        line-height: 1.6; /* Improve readability */
+        font-size: 14px;
+        line-height: 1.6;
         color: var(--text-dark);
     }
 
     footer {
-        display: flex;
         flex-direction: column;
         align-items: center;
         padding: 10px 20px;
-        width: 100%;  /* Ensures full-width footer on smaller screens */
-        box-sizing: border-box;
+        width: 100%;
+        position: relative;
+        margin-top: 20px;
     }
 
     footer .social-icons {
         display: flex;
         justify-content: center;
         margin-bottom: 10px;
-        gap: 8px; /* Slightly increased gap between icons for visual clarity */
+        gap: 8px;
     }
 
     footer .social-icons img {
-        width: 30px;  /* Slightly smaller icons to avoid excess space */
+        width: 30px;
         height: 30px;
-        transition: transform 0.3s ease;  /* Smooth scale on hover */
+        transition: transform 0.3s ease;
     }
 
     footer .social-icons img:hover {
-        transform: scale(1.1);  /* Slight scaling effect for better interaction feedback */
+        transform: scale(1.1); 
     }
 
     footer a {
@@ -276,10 +285,10 @@ footer .social-icons img {
         font-size: 14px;
         margin-top: 10px;
         color: var(--primary-color);
-        text-decoration: none;  /* Removes underline for cleaner look */
+        text-decoration: none;
     }
 
     footer a:hover {
-        text-decoration: underline;  /* Adds underline on hover for better accessibility */
+        text-decoration: underline;
     }
 }
