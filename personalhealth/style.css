@@ -390,9 +390,8 @@ hr {
         margin-left: 0;
         margin-top: 20px;
         grid-column: 1 / 11;  /* Ensure msg1 also takes full width */
-    }
 
-
+}
 }
 
 /* Increase width for home-page content */
