@@ -73,13 +73,12 @@ footer {
     background-color: var(--primary-color);
     color: #7eafbb;
     font-size: 1.2rem;
-    padding: 5px 50px;
+    padding: 25px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     margin-top: 40px;
-    min-height: 50px; 
 }
 
 footer a {
@@ -195,11 +194,6 @@ h3 {
     z-index: 1;
 }
 
-img.di {
-    width: 600px;
-    height: 450px;
-    object-fit: cover;
-}
 
 .msg1 {
     font-family: 'DM Sans', 'sans-serif';
@@ -427,7 +421,6 @@ button#info {
         padding: 10px;
         flex-direction: column;
         text-align: center;
-        min-height: 50px;
     }
 
     footer .social img {
