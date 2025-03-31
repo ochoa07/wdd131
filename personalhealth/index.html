@@ -12,6 +12,14 @@
     <link rel="icon" href="images/logo.png" type="image/x-icon" />
 </head>
 
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" as="style">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cookie&display=swap">
+
 
 <body>
     <header>
@@ -34,14 +42,14 @@
         </div>
     </section>
 
-    <div class="search-container" aria-labelledby="search-section">
-        <input type="text" id="search-bar" placeholder="Find a dimension of health" aria-describedby="search-hint">
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Find a dimension of health">
         <button id="search-button" aria-label="Initiate search">
             <img src="images/search.svg" alt="Search icon">
         </button>
     </div>
     <main class="home-grid" id="health-dimensions-container"></main>
-        <script src="main.js" type="module"></script>
+        <script src="main.js" type="module" defer></script>
     <!--
     <main class="home-grid" id="health-dimensions-container">
             <img class="di" src="images/rsz_emotional.webp" alt="Emotional health concept, image of a peaceful setting">
