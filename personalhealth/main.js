@@ -75,7 +75,7 @@ function searchHealthDimensions() {
     const container = document.getElementById('health-dimensions-container');
     if (container) {
         if (filteredDimensions.length === 0) {
-            container.innerHTML = `<p class="no-results">No results found. Please try a different keyword.</p>`;
+            container.innerHTML = `<p class="no-results" >No results found. Please try a different keyword.</p>`;
         } else {
             container.innerHTML = filteredDimensions.map(createHealthDimensionHTML).join('');
         }

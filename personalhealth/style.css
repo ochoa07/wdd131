@@ -15,7 +15,6 @@
     --scripture-font: "Cookie";
 }
 
-
 #health-dimension-content {
     display: grid;
     grid-template-columns: repeat(10, 1fr); /* Create 10 equal columns */
@@ -66,6 +65,7 @@ nav a:hover {
 
 .logo {
     width: 120px;
+    height: 90px;
 }
 
 footer {
@@ -349,11 +349,16 @@ hr {
 
     .logo {
         width: 100px;
+        height: 80px;
     }
 
     nav ul {
         flex-direction: column;  /* Stack nav links vertically on small screens */
         gap: 10px;
+    }
+
+    .health-dimension {
+        justify-content: center;
     }
 
 
@@ -383,6 +388,7 @@ hr {
         margin: 0;
         grid-column: 1 / 11;
         grid-row: 1;
+        justify-content: center;
     }
 
     .msg1 {

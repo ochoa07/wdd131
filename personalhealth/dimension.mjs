@@ -1,7 +1,7 @@
 export const healthDimensions = [
     {
         title: "Emotional Health",
-        image: "images/emotional.jpg",
+        image: "images/rsz_emotional.webp",
         tags: ["anxiety", "stress management", "self-awareness"],
         description: "Emotional health refers to understanding, managing, and expressing emotions in a balanced way, fostering resilience and well-being.",
         tips: [
@@ -15,7 +15,7 @@ export const healthDimensions = [
     },
     {
         title: "Physical Health",
-        image: "images/physical.jpg",
+        image: "images/rsz_physical.webp",
         tags: ["fitness", "nutrition", "exercise"],
         description: "Physical health is about maintaining a strong body through proper nutrition, exercise, sleep, and medical care.",
         tips: [
@@ -29,7 +29,7 @@ export const healthDimensions = [
     },
     {
         title: "Spiritual Health",
-        image: "images/spiritual.jpg",
+        image: "images/rsz_1spiritual.webp",
         tags: ["faith", "purpose", "meditation"],
         description: "Spiritual health involves finding meaning and purpose in life, often through faith, meditation, or personal values.",
         tips: [
@@ -43,7 +43,7 @@ export const healthDimensions = [
     },
     {
         title: "Mental Health",
-        image: "images/mental.jpg",
+        image: "images/rsz_mental.webp",
         tags: ["resilience", "stress", "self-care"],
         description: "Mental health includes emotional well-being, cognitive function, and resilience against stress and challenges.",
         tips: [
@@ -57,7 +57,7 @@ export const healthDimensions = [
     },
     {
         title: "Intellectual Health",
-        image: "images/intellectual.jpg",
+        image: "images/rsz_intellectual.webp",
         tags: ["learning", "creativity", "problem-solving"],
         description: "Intellectual health is about lifelong learning, critical thinking, and engaging in creative and educational activities.",
         tips: [
@@ -71,7 +71,7 @@ export const healthDimensions = [
     },
     {
         title: "Environmental Health",
-        image: "images/environmental.jpg",
+        image: "images/rsz_environmental.webp",
         tags: ["sustainability", "clean living", "nature"],
         description: "Environmental health focuses on creating a safe, clean, and sustainable living space that promotes well-being.",
         tips: [
@@ -85,7 +85,7 @@ export const healthDimensions = [
     },
     {
         title: "Social Health",
-        image: "images/social.jpg",
+        image: "images/rsz_social.webp",
         tags: ["relationships", "communication", "support"],
         description: "Social health is the ability to build meaningful relationships and communicate effectively with others.",
         tips: [
