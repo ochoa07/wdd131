@@ -13,14 +13,14 @@ const dimensionColors = {
 
 // Function to get a unique random health dimension
 function getUniqueRandomDimension() {
-    let lastDimension = localStorage.getItem("lastDimension");
+    let lastDimension = sessionStorage.getItem("lastDimension"); // Changed from localStorage
 
     // Get a random dimension that is different from the last one
     let availableDimensions = healthDimensions.filter(dim => dim.title !== lastDimension);
     let newDimension = availableDimensions[Math.floor(Math.random() * availableDimensions.length)] || healthDimensions[0];
 
     // Store new dimension title to avoid immediate repetition
-    localStorage.setItem("lastDimension", newDimension.title);
+    sessionStorage.setItem("lastDimension", newDimension.title);
 
     return newDimension;
 }
@@ -75,7 +75,7 @@ function searchHealthDimensions() {
     const container = document.getElementById('health-dimensions-container');
     if (container) {
         if (filteredDimensions.length === 0) {
-            container.innerHTML = `<p class="no-results" >No results found. Please try a different keyword.</p>`;
+            container.innerHTML = `<p class="no-results">No results found. Please try a different keyword.</p>`;
         } else {
             container.innerHTML = filteredDimensions.map(createHealthDimensionHTML).join('');
         }
@@ -91,17 +91,18 @@ function handleContactForm() {
         form.addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent form from reloading the page
 
-            // Log to confirm if form is being submitted
             console.log("Form submitted!");
 
             // Show the response message
             responseMessage.textContent = "Thank you! Your message has been received.";
             responseMessage.style.color = "black"; // Success message color
 
-            // Log to confirm message is displayed
             console.log("Response message displayed");
 
-            form.reset(); // Clears the form fields after submission
+            // Delay reset slightly to avoid cache issues
+            setTimeout(() => {
+                form.reset();
+            }, 500);
         });
     } else {
         console.error('Form or Response Message not found.');
@@ -114,8 +115,7 @@ function handleClickMeButton() {
     
     if (infoButton) {
         infoButton.addEventListener('click', function() {
-            // Redirect to another page (replace with the desired URL)
-            window.location.href = 'https://www.cdc.gov/health-topics.html';  // Change this to your desired URL
+            window.location.href = 'https://www.cdc.gov/health-topics.html';  
         });
     }
 }
@@ -131,4 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     handleContactForm(); // Enable contact form submission handling
     handleClickMeButton(); // Enable the "Click me" button redirection
+});
+
+// Cleanup event listeners before the user navigates away
+window.addEventListener('pagehide', () => {
+    const searchBar = document.getElementById('search-bar');
+    if (searchBar) {
+        searchBar.removeEventListener('input', searchHealthDimensions);
+    }
 });

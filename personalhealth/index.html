@@ -7,15 +7,10 @@
     <meta name="description" content="Personal Site. Final Project.">
     <meta name="author" content="Chelsea Ochoa Mata">
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="dimension.mjs" defer></script>
-    <script src="scrips/main.js"></script>
+    <script src="dimension.mjs" type="module" defer></script>
+    <script src="main.js" type="module" defer></script>
     <link rel="icon" href="images/logo.png" type="image/x-icon" />
 </head>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@100..900&family=DM+Sans:wght@100..1000&family=Cookie&display=swap" rel="stylesheet">
-
 
 
 <body>
@@ -45,32 +40,31 @@
             <img src="images/search.svg" alt="Search icon">
         </button>
     </div>
-
     <main class="home-grid" id="health-dimensions-container"></main>
         <script src="main.js" type="module"></script>
-
     <!--
-            <main class="home-grid" id="health-dimensions-container">
+    <main class="home-grid" id="health-dimensions-container">
             <img class="di" src="images/rsz_emotional.webp" alt="Emotional health concept, image of a peaceful setting">
-            <section class="msg1">
-                <h2>Emotional Health</h2>
-                <div class="tags">
-                    <span class="tag">Anxiety</span>
-                </div>
+        <section class="msg1">
+            <h2>Emotional Health</h2>
+            <div class="tags">
+                <span class="tag">Anxiety</span>
+            </div>
                 <p>Emotional health refers to the ability to understand, manage, and express emotions in a healthy and balanced way, encompassing self-awareness, resilience, and the capacity to navigate life's challenges.</p>
                 <p><strong>Tips to Improve:</strong></p>
-                <ul>
-                    <li>Get enough sleep (7-9 hours)</li>
-                    <li>Exercise regularly</li>
-                    <li>Practice self-care</li>
-                    <li>Connect with others</li>
-                    <li>Engage in mindfulness and meditation</li>
-                    <li>Be kind to yourself</li>
-                    <li>Express your emotions</li>
-                    <li>Seek professional help when needed</li>
-                </ul>
-                <a class="lm1" href="contactus.html" aria-label="Learn more about Emotional Health">Learn More</a>
-            </section>
+            <ul>
+                <li>Get enough sleep (7-9 hours)</li>
+                <li>Exercise regularly</li>
+                <li>Practice self-care</li>
+                <li>Connect with others</li>
+                <li>Engage in mindfulness and meditation</li>
+                <li>Be kind to yourself</li>
+                <li>Express your emotions</li>
+                <li>Seek professional help when needed</li>
+            </ul>
+
+            <a class="lm1" href="contactus.html" aria-label="Learn more about Emotional Health">Learn More</a>
+        </section>
 
         <section class="quote">
             <blockquote>
@@ -81,10 +75,10 @@
 
 -->
 
-<button id="info" aria-label="Click for more information">
-    <img src="images/rsz_load.webp" alt="Information button">
-    <span id="info-message">Click me!</span>
-</button>
+    <button id="info" aria-label="Click for more information">
+        <img src="images/rsz_load.webp" alt="Information button">
+        <span id="info-message">Click me!</span>
+    </button>
 
     <footer>
         <p><a href="contactus.html">Contact Us</a></p>
@@ -101,6 +95,5 @@
         </div>
     </footer>
 
-    <!-- Optional: Add ARIA live regions or other features for dynamic updates if needed -->
 </body>
 </html>
