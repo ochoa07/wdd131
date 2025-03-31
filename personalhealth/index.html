@@ -7,86 +7,95 @@
     <meta name="description" content="Personal Site. Final Project.">
     <meta name="author" content="Chelsea Ochoa Mata">
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="scrips/.js" defer></script>
-    <script src=".mjs" defer></script>
+    <script src="dimension.mjs" defer></script>
+    <script src="scrips/main.js"></script>
     <link rel="icon" href="images/logo.png" type="image/x-icon" />
 </head>
 <body>
-    <div id="content">
-        <header>
-            <a id="logo_link" href="index.html">
-                <img class="logo" src="images/logo.png" alt="Logo">
-            </a>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="contactus.html">Contact Us</a>
-                <a href="site-plan.html">Site Plan</a>
-            </nav>
-        </header>
+    <header>
+        <a id="logo_link" href="index.html" aria-label="Homepage">
+            <img class="logo" src="images/logo.png" alt="Personal Health & Wellness Logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html" aria-label="Go to Home page">Home</a></li>
+                <li><a href="contactus.html" aria-label="Go to Contact Us page">Contact Us</a></li>
+                <li><a href="site-plan.html" aria-label="View the Site Plan">Site Plan</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <main>
-            <div id="hero">
-                <section id="hero-msg">
-                    <h1 class="home-title2">Personal Health & Wellness</h1>
-                    <h3>Discover the different dimensions of health and learn how you can improve your personal health and wellness.</h3>
-                </section>
-            </div>
+    <section id="hero" role="banner">
+        <div id="hero-msg">
+            <h1 class="home-title2">Personal Health & Wellness</h1>
+            <p class="hero-description">Discover the different dimensions of health and learn how you can improve your personal health and wellness.</p>
+        </div>
+    </section>
 
-            <div class="search-container">
-                <input type="text" id="search-bar" placeholder="Find a dimension of health">
-                <button id="search-button">
-                    <img src="images/search.svg" alt="Search Icon">
-                </button>
-            </div>
-            <hr>
-            </main>
-
-            <main class="home-grid">
-
-                <div id="background"></div>
-                    <img class="di" src="images/emotional.jpg" alt="Dimension Image">
-                    <section class="msg1">
-                    <h2>Emotional Health</h2>
-                    <div class="tags">
-                        <span class="tag">anxiety</span>
-                    </div>
-                        <p>Emotional health refers to the ability to understand, manage, and express emotions in a healthy and balanced way, encompassing self-awareness, resilience, and the capacity to navigate life's challenges.</p>
-                        <p>Tips to Improve:</p>
-                        <ul>
-                            <li>Get enough sleep (7-9 hours)</li>
-                            <li>Exercise regularly</li>
-                            <li>Practice self-care</li>
-                            <li>Connect with others</li>
-                            <li>Engage in mindfulness and meditation</li>
-                            <li>Be kind to yourself</li>
-                            <li>Express your emotions</li>
-                            <li>Seek professional help when needed</li>
-                        </ul>
-                        <a class="lm1" href="contactus.html">Learn More</a>
-                    </section>
-                </div>
-                <section class="quote">
-                    <p>jfjvjfhjfhgjfhghfjghjfghjhgujfhguhfhgfuh</p>
-                </section>
-        </main>
-        <button id="info">
-            <img src="images/load.png" alt="Info Button">
+    <div class="search-container" aria-labelledby="search-section">
+        <input type="text" id="search-bar" placeholder="Find a dimension of health" aria-describedby="search-hint">
+        <button id="search-button" aria-label="Initiate search">
+            <img src="images/search.svg" alt="Search icon">
         </button>
-
-        <footer>
-            <p><a href="contactus.html">Contact Us</a></p>
-            <div class="social">
-                <a href="https://facebook.com" target="_blank">
-                    <img src="images/fcb.jpg" alt="Facebook icon">
-                </a>
-                <a href="https://twitter.com" target="_blank">
-                    <img src="images/twt.png" alt="Twitter icon">
-                </a>
-                <a href="https://instagram.com" target="_blank">
-                    <img src="images/inst.png" alt="Instagram icon">
-                </a>
-            </div>
-        </footer>
     </div>
+
+    <hr>
+    <main class="home-grid" id="health-dimensions-container"></main>
+    <script src="main.js" type="module"></script>
+    
+
+    <!--
+            <main class="home-grid" id="health-dimensions-container">
+            <img class="di" src="images/emotional.jpg" alt="Emotional health concept, image of a peaceful setting">
+            <section class="msg1">
+                <h2>Emotional Health</h2>
+                <div class="tags">
+                    <span class="tag">Anxiety</span>
+                </div>
+                <p>Emotional health refers to the ability to understand, manage, and express emotions in a healthy and balanced way, encompassing self-awareness, resilience, and the capacity to navigate life's challenges.</p>
+                <p><strong>Tips to Improve:</strong></p>
+                <ul>
+                    <li>Get enough sleep (7-9 hours)</li>
+                    <li>Exercise regularly</li>
+                    <li>Practice self-care</li>
+                    <li>Connect with others</li>
+                    <li>Engage in mindfulness and meditation</li>
+                    <li>Be kind to yourself</li>
+                    <li>Express your emotions</li>
+                    <li>Seek professional help when needed</li>
+                </ul>
+                <a class="lm1" href="contactus.html" aria-label="Learn more about Emotional Health">Learn More</a>
+            </section>
+
+        <section class="quote">
+            <blockquote>
+                <p>"Health is not just about what you're eating. It's about what you're thinking and saying." - Unknown</p>
+            </blockquote>
+        </section>
+    </main>
+
+-->
+
+<button id="info" aria-label="Click for more information">
+    <img src="images/load.png" alt="Information button">
+    <span id="info-message">Click me!</span>
+</button>
+
+    <footer>
+        <p><a href="contactus.html">Contact Us</a></p>
+        <div class="social">
+            <a href="https://facebook.com" target="_blank" aria-label="Visit our Facebook page">
+                <img src="images/fcb.jpg" alt="Facebook icon">
+            </a>
+            <a href="https://twitter.com" target="_blank" aria-label="Visit our Twitter page">
+                <img src="images/twt.png" alt="Twitter icon">
+            </a>
+            <a href="https://instagram.com" target="_blank" aria-label="Visit our Instagram page">
+                <img src="images/inst.png" alt="Instagram icon">
+            </a>
+        </div>
+    </footer>
+
+    <!-- Optional: Add ARIA live regions or other features for dynamic updates if needed -->
 </body>
 </html>

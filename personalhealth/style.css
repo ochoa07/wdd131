@@ -15,40 +15,54 @@
     --scripture-font: "Cookie";
 }
 
-.home-grid {
-    display: grid; /* Enable grid layout */
+.home-grid, #health-dimensions-container {
+    display: grid;
     grid-template-columns: repeat(10, 1fr); /* Create 10 equal columns */
+    grid-template-rows: auto; /* Ensure automatic row heights */
     gap: 10px; /* Optional: Add some spacing between grid items */
+    width: 100%;
+    grid-template-areas:
+        "di msg1";
 }
 
 header {
-    background-color: var(--primary-color); 
-    text-decoration: none;
-    display: grid;
-    grid-template-columns: 150px auto; 
-}
-a {
-    color: white; 
-    text-decoration: none; 
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between; /* Ensures space between logo and navigation */
+    align-items: center;
+    padding: 10px 50px;
 }
 
-nav {
+.hero-description {
+    color: #3c6e71;
+    font-family: 'fraunces', 'Helvetica Neue', Helvetica, 'Open Sans';
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul {
     display: flex;
-    justify-content: flex-end; /* Moves links to the right */
-    gap: 5px; /* Adds space between links */
+    gap: 20px;
+    list-style: none;
 }
 
 nav a {
-    text-align: right;
-    color: #ffffff; 
-    text-decoration: none; 
-    padding: 35px;
-    font-size: 1.2em;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: var(--secondary-color); 
-    color: var(--accent2-color); 
+    background-color: var(--secondary-color);
+    color: var(--accent2-color);
     text-decoration: underline;
 }
 
@@ -57,43 +71,45 @@ nav a:hover {
 }
 
 footer {
-    background-color: var(--primary-color); 
-    color: #7eafbb; 
-    font-size: 1.2rem; 
+    background-color: var(--primary-color);
+    color: #7eafbb;
+    font-size: 1.2rem;
     padding: 25px 50px;
-    margin-top: 200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
 }
 
 footer a {
     color: whitesmoke;
     text-decoration: none;
 }
+
 footer p {
     color: whitesmoke;
-    justify-content: left;
+    margin: 0;
 }
 
 footer a:hover {
     color: var(--secondary-color);
-    text-decoration: underline; 
-}
-
-footer p a:hover {
     text-decoration: underline;
-
 }
 
 footer .social img {
-    padding-top: 15px;
-    justify-items: right;
-}   
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
 
+footer .social img:hover {
+    transform: scale(1.1);
+}
 
 .icon {
-    width: 80px; 
+    width: 80px;
     padding-top: 10px;
 }
 
@@ -102,7 +118,7 @@ h2 {
 }
 
 .home-title2 {
-    color: var(--secondary-color); 
+    color: var(--secondary-color);
     font-family: 'fraunces', 'Helvetica Neue', Helvetica, 'Open Sans';
     font-size: 2.5em;
     text-align: center;
@@ -112,17 +128,16 @@ h3 {
     color: #3c6e71;
     font-family: 'fraunces', 'Helvetica Neue', Helvetica, 'Open Sans';
     text-align: center;
-    font-size: 1em;
-    margin-bottom: 50px;
+    font-size: 1.1em;
+    margin-bottom: 40px;
 }
 
 .search-container {
     position: relative;
     width: 100%;
-    max-width: 1100px;
+    max-width: 800px;
     margin: 20px auto;
-    padding-right: 40px;
-    text-align: center; 
+    text-align: center;
 }
 
 .search-container input[type="text"] {
@@ -131,11 +146,12 @@ h3 {
     font-size: 16px;
     border: 2px solid var(--text-dark);
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .search-container button {
     position: absolute;
-    right: 20px;
+    right: 0px;
     top: 50%;
     transform: translateY(-50%);
     background-color: transparent;
@@ -150,6 +166,9 @@ h3 {
 
 hr {
     background-color: var(--accent1-color);
+    border: none;
+    height: 2px;
+    margin-top: 30px;
 }
 
 .tag {
@@ -162,44 +181,40 @@ hr {
     font-weight: bold;
 }
 
-#background {
-    height: 630px; 
-    background-color: #7eafbb; 
-    grid-column: 1/11;
-    grid-row: 3/6;
-}
 
 .di {
-    grid-column: 2/7;
-    grid-row: 3/5;
-    max-width: 100%; /* Prevents it from growing too large */
-    height: auto; /* Keeps the aspect ratio */
+    grid-column: 2 / 5; /* Occupy columns 2 to 6 */
+    grid-row: 2; /* Occupy row 2 */
+    width: 600px;
+    height: 450px;
+    margin-left: 40px;
     margin-top: 40px;
-    margin-left: -90px;
 }
 
 .msg1 {
     font-family: var(--secondary-font);
     background-color: #2a9d8f;
-    line-height: 1.5em; 
+    line-height: 1.5em;
     padding: 20px;
-    margin-top: 80px;
     box-shadow: 5px 5px 10px #2a9d8f;
-    grid-column: 6/10;
-    grid-row: 3/4;
-    margin-right: -80px;
+    grid-column: 6 / 11; /* Occupy columns 6 to 10 */
+    grid-row: 2; /* Place it in the same row as .di */
+    width: 600px;
+    position: relative;
+    margin-left: 650px;
+    margin-top: -420px;
 }
 
-.lm1{
+.lm1 {
     font-family: var(--primary-font);
-    background-color: #7eafbb; 
-    color: black; 
-    text-decoration: none; 
+    background-color: #7eafbb;
+    color: black;
+    text-decoration: none;
     font-size: 18px;
     padding: 10px 25px;
     border-radius: 5px;
     float: right;
-
+    margin-top: -30px;
 }
 
 #info {
@@ -207,19 +222,236 @@ hr {
     border: none;
     padding: 0;
     cursor: pointer;
-    float: right;
-    margin-top: 50px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;  /* Vertically align the image and text */
 }
 
 #info img {
-    width: 90px; /* Adjust size as needed */
+    width: 90px;
     height: auto;
+    margin-right: 0px; /* Adds space between the image and the text */
+
+}
+
+#info-message {
+    color: var(--text-dark);
+    font-family: var(--primary-font);
+    font-size: 16px;  /* Optional: Adjust size of the text */
 }
 
 .quote {
     background-color: var(--secondary-color);
-    padding: 5px 5px 5px 5px;
-    margin-top: 30px;
-    text-align: center;
+    padding: 15px;
+    margin-top: 100px;
     font-family: var(--scripture-font);
+    font-size: 1.3em;
+    grid-column: 1/11; /* Occupy full grid width */
+    grid-row: 4/5; /* Place it in row 4 */
+    text-align: center;
+    margin-left: 35px;
+}
+
+
+
+
+/*_____________________________________________________PAGE 2_________________________________________________________________*/
+
+/* Contact Page Wrapper */
+.contact-page {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures the page takes up at least the full viewport height */
+}
+
+/* Contact Form Container */
+.contact-form {
+    background: var(--accent2-color);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 390px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* Form Title */
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Input Groups */
+.contact-form .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+    margin-right: 23px;
+}
+
+.contact-form label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    font-family: var(--primary-font);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: var(--secondary-font);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Submit Button */
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Response Message */
+.contact-form #responseMessage {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/*___________________________________________________QUERIES___________________________________________________________*/
+
+/* Responsive Header for small screens */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    nav ul {
+        flex-direction: column;  /* Stack nav links vertically on small screens */
+        gap: 10px;
+    }
+}
+
+/* Mobile-friendly text size */
+@media (max-width: 600px) {
+    .hero-description {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .home-title2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+}
+
+/* Responsive adjustments for images and messages */
+@media (max-width: 768px) {
+    .di {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        grid-column: 1 / 11;
+        grid-row: 1;
+    }
+
+    .msg1 {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+        grid-column: 1 / 11;  /* Ensure msg1 also takes full width */
+    }
+}
+
+/* Increase width for home-page content */
+@media (max-width: 1024px) {
+    .di,
+    .msg1,
+    .quote {
+        width: 80%; /* Increase width for better layout */
+        margin: 0 auto; /* Center the content */
+    }
+}
+
+/* Responsive Quote */
+@media (max-width: 600px) {
+    .quote {
+        font-size: 1em;
+        margin-top: 20px;
+    }
+}
+
+/* Responsive Contact Form */
+@media (max-width: 480px) {
+    .contact-form {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .contact-form h2 {
+        font-size: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        font-size: 14px;
+    }
+}
+
+/* Responsive Search */
+@media (max-width: 480px) {
+    .search-container {
+        width: 90%;
+    }
+
+    .search-container input[type="text"] {
+        font-size: 14px;
+    }
+}
+
+/* Responsive Footer */
+@media (max-width: 600px) {
+    footer {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .social img {
+        margin: 10px 0;
+    }
 }
